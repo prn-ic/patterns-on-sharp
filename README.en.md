@@ -7,7 +7,7 @@ This repository has been realization design patterns
 All patterns will be locate in folder "src", each view will be stored in different solutions
 
 1. Behavioral Patterns (BehavioralPatterns)
-   - Factory method
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/FactoryMethod">Factory Method</a>
    - Abstract factory
    - Singleton
    - Builder
