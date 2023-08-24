@@ -8,7 +8,7 @@ All patterns will be locate in folder "src", each view will be stored in differe
 
 1. Creational Patterns (CreationalPatterns)
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/FactoryMethod">Factory Method</a>
-   - Abstract factory
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/CreationalPatterns/AbstractFactory">Abstract factory</a>
    - Singleton
    - Builder
    - Prototype
