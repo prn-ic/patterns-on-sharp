@@ -1,7 +1,8 @@
 ﻿using FactoryMethod.Entities;
+using AbstractFactory;
 
-FactoryMethodExample();
-
+// FactoryMethodExample();
+AbstractFactoryExample();
 void FactoryMethodExample()
 {
     CarFactory factory = new TruckFactory("ZIL"); 
@@ -11,6 +12,16 @@ void FactoryMethodExample()
     factory = new CoupeFactory("Some Car Factory"); // upcast
     ICar coupeCar = factory.Create("new coupe car"); // Create a coupe with name "new coupe car"
     PrintForCarCreated(factory, truckCar);
+}
+
+void AbstractFactoryExample()
+{
+    Person policeman = new Person(new Policeman());
+    Person thief = new Person(new Thief());
+    policeman.Move();
+    thief.Move();
+    policeman.Act();
+    thief.Act();
 }
 
 void PrintForCarCreated(CarFactory factory, ICar car)
