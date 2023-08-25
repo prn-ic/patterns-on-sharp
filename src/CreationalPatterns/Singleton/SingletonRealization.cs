@@ -6,7 +6,10 @@ public class CarSingleThreaded
 	public string? CarName { get; private set;}
 	protected CarSingleThreaded(string carName) => CarName = carName;
 	public static CarSingleThreaded GetInstanse(string carName) 
-		=> instanse == null? new CarSingleThreaded(carName) : instanse;
+	{
+		if (instanse == null) instanse = new CarSingleThreaded(carName);
+		return instanse;
+	}
 }
 
 public class CarMultiThreaded
