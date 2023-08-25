@@ -1,8 +1,11 @@
 ﻿using FactoryMethod.Entities;
 using AbstractFactory;
+using Singleton;
 
 // FactoryMethodExample();
-AbstractFactoryExample();
+// AbstractFactoryExample();
+SingletonExample();
+
 void FactoryMethodExample()
 {
     CarFactory factory = new TruckFactory("ZIL"); 
@@ -22,6 +25,15 @@ void AbstractFactoryExample()
     thief.Move();
     policeman.Act();
     thief.Act();
+}
+
+void SingletonExample()
+{
+    CarSingleThreaded firstCar = CarSingleThreaded.GetInstanse("MAZDA");
+    CarSingleThreaded secondCar = CarSingleThreaded.GetInstanse("AUDI");
+    
+    Console.WriteLine(firstCar.CarName);
+    Console.WriteLine(secondCar.CarName);
 }
 
 void PrintForCarCreated(CarFactory factory, ICar car)
