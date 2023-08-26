@@ -1,10 +1,12 @@
 ﻿using FactoryMethod.Entities;
 using AbstractFactory;
 using Singleton;
+using Prototype;
 
 // FactoryMethodExample();
 // AbstractFactoryExample();
-SingletonExample();
+// SingletonExample();
+PrototypeExample();
 
 void FactoryMethodExample()
 {
@@ -34,6 +36,16 @@ void SingletonExample()
     
     Console.WriteLine(firstCar.CarName);
     Console.WriteLine(secondCar.CarName);
+}
+
+void PrototypeExample()
+{
+    IFile txtFile = new TxtFile("txtFile");
+    txtFile.Content = "123";
+    IFile txtCopyFile = txtFile.Clone();
+    Console.WriteLine($"|\t name \t | \t content \t |\n" +
+        $" {txtFile.Name} \t \t {txtFile.Content} \t\n" + 
+        $" {txtCopyFile.Name} \t \t {txtCopyFile.Content} \t\n");
 }
 
 void PrintForCarCreated(CarFactory factory, ICar car)

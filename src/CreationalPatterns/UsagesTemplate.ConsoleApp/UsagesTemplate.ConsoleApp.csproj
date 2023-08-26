@@ -4,6 +4,7 @@
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
     <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
     <ProjectReference Include="..\Singleton\Singleton.csproj" />
+    <ProjectReference Include="..\Prototype\Prototype.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
