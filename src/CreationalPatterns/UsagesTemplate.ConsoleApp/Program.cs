@@ -2,11 +2,13 @@
 using AbstractFactory;
 using Singleton;
 using Prototype;
+using Builder;
 
 // FactoryMethodExample();
 // AbstractFactoryExample();
 // SingletonExample();
-PrototypeExample();
+// PrototypeExample();
+BuilderExample();
 
 void FactoryMethodExample()
 {
@@ -46,6 +48,16 @@ void PrototypeExample()
     Console.WriteLine($"|\t name \t | \t content \t |\n" +
         $" {txtFile.Name} \t \t {txtFile.Content} \t\n" + 
         $" {txtCopyFile.Name} \t \t {txtCopyFile.Content} \t\n");
+}
+
+void BuilderExample()
+{
+    CarManufacturer manufacturer = new CarManufacturer();
+    Car ladaCar = manufacturer.CreateCar(new LadaCarBuilder());
+    Console.WriteLine($"Type: {nameof(LadaCarBuilder)}; TypeWheel: {ladaCar.Wheel!.Radius}; TypeEngine: {ladaCar.Engine!.HorsePower}");
+
+    Car mercedesCar = manufacturer.CreateCar(new MercedesCarBuilder());
+    Console.WriteLine($"Type: {nameof(MercedesCarBuilder)}; TypeWheel: {mercedesCar.Wheel!.Radius}; TypeEngine: {mercedesCar.Engine!.HorsePower}");
 }
 
 void PrintForCarCreated(CarFactory factory, ICar car)

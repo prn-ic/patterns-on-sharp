@@ -5,6 +5,7 @@
     <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
     <ProjectReference Include="..\Singleton\Singleton.csproj" />
     <ProjectReference Include="..\Prototype\Prototype.csproj" />
+    <ProjectReference Include="..\Builder\Builder.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
