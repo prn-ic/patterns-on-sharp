@@ -41,7 +41,7 @@ public class Manager : IObserver
 	}
 	public void Update(object obj)
 	{
-		Console.WriteLine($"Пользователь {Name} получил новое сообщение!\n Сообщение: {(string)obj}");
+		Console.WriteLine($"Менеджер {Name} получил новое сообщение!\n Сообщение: {(string)obj}");
 	}
 }
 
