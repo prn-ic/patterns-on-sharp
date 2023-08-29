@@ -1,6 +1,8 @@
 ﻿using Strategy;
+using Observer;
 
-StrategyExample();
+// StrategyExample();
+ObserverExample();
 
 void StrategyExample()
 {
@@ -27,6 +29,21 @@ void StrategyExample()
 	sort.SortArray(array);
 	Console.WriteLine("Array before: ");
 	PrintArray(array);
+}
+
+void ObserverExample()
+{
+	EmailSender sender = new EmailSender();
+	Manager alice = new Manager(sender);
+	alice.Name = "Алиса";
+	User ivan = new User(sender);
+	ivan.Name = "Иван";
+
+	sender.SendNewMessage("hello bitches! buy my new course!!!");
+
+	ivan.RefuseSending();
+
+	sender.SendNewMessage("I`m real Mr.Beast!!! We give you 1 million dollars!!");
 }
 
 void PrintArray(int[] array)
