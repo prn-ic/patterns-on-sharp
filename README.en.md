@@ -15,7 +15,7 @@ All patterns will be locate in folder "src", each view will be stored in differe
 2. Behavioral Patterns (BehavioralPatterns)
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Strategy">Strategy</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Observer">Observer</a>
-   - Command
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Command">Command</a>
    - Template method
    - Iterator
    - State
