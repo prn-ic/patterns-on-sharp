@@ -1,8 +1,10 @@
 ﻿using Strategy;
 using Observer;
+using Command;
 
 // StrategyExample();
-ObserverExample();
+// ObserverExample();
+CommandRealization();
 
 void StrategyExample()
 {
@@ -44,6 +46,21 @@ void ObserverExample()
 	ivan.RefuseSending();
 
 	sender.SendNewMessage("I`m real Mr.Beast!!! We give you 1 million dollars!!");
+}
+
+void CommandRealization()
+{
+    Car car = new Car();
+    Invoker invoker = new Invoker();
+	invoker.SetCommand(new CarCommand(car));	
+    invoker.Invoke();
+    invoker.Disinvoke();
+
+    Computer computer = new Computer();
+    invoker.SetCommand(new ComputerCommand(computer));
+    invoker.Invoke();
+    invoker.Disinvoke();
+
 }
 
 void PrintArray(int[] array)

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Strategy\Strategy.csproj" />
     <ProjectReference Include="..\Observer\Observer.csproj" />
+    <ProjectReference Include="..\Command\Command.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
