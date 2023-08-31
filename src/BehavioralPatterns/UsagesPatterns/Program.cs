@@ -1,10 +1,12 @@
 ﻿using Strategy;
 using Observer;
 using Command;
+using TemplateMethod;
 
 // StrategyExample();
 // ObserverExample();
-CommandRealization();
+// CommandRealization();
+TemplateMethodExample();
 
 void StrategyExample()
 {
@@ -61,6 +63,22 @@ void CommandRealization()
     invoker.Invoke();
     invoker.Disinvoke();
 
+}
+
+void TemplateMethodExample()
+{
+	Person person = new Person();
+	Animal animal = new Animal();
+	Ghost ghost = new Ghost();
+
+	Console.WriteLine("Person realization:");
+	person.LifeCycle();
+	
+	Console.WriteLine("Animal realization:");
+	animal.LifeCycle();
+
+	Console.WriteLine("Ghost realization:");
+	ghost.LifeCycle();
 }
 
 void PrintArray(int[] array)
