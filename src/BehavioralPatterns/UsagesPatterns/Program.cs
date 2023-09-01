@@ -1,10 +1,12 @@
 ﻿using Strategy;
 using Observer;
 using Command;
+using Iterator;
 
 // StrategyExample();
 // ObserverExample();
-CommandRealization();
+// CommandRealization();
+IteratorRealization();
 
 void StrategyExample()
 {
@@ -63,6 +65,35 @@ void CommandRealization()
 
 }
 
+void IteratorRealization()
+{
+	Numerable<int> numerables = new Numerable<int>(new[] { 1, 2, 3, 4, 5});
+	IIterator<int> iterator = numerables.Create();
+
+	Numerable<Person> persons = new Numerable<Person>(new Person[] {
+		new() { Name = "Alex", LastName = "Pizza", Age = 5 },
+		new() { Name = "Walter", LastName = "Black", Age = 55 },
+		new() { Name = "Saul", LastName = "Goodman", Age = 12 }
+	});
+	IIterator<Person> personIterator = persons.Create();
+
+	while (iterator.MoveNext())
+	{
+		int val = iterator.Current;
+		Console.Write(val + " ");
+	}
+
+	Console.WriteLine();
+
+	while (personIterator.MoveNext())
+	{
+		Person val = personIterator.Current;
+		Console.WriteLine(val + "==================");
+	}
+
+	Console.WriteLine();
+}
+
 void PrintArray(int[] array)
 {
 	foreach (var item in array)
@@ -70,4 +101,13 @@ void PrintArray(int[] array)
 		Console.Write(item + " ");
 	}
 	Console.WriteLine();
+}
+
+public class Person
+{
+	public string? Name { get; set; }
+	public string? LastName { get; set; }
+	public int Age { get; set; }
+	public override string ToString() =>
+		$"Name: {Name}\nLastName: {LastName}\nAge: {Age}\n";
 }
