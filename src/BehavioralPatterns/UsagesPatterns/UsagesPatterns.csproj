@@ -5,6 +5,7 @@
     <ProjectReference Include="..\Observer\Observer.csproj" />
     <ProjectReference Include="..\Command\Command.csproj" />
     <ProjectReference Include="..\Iterator\Iterator.csproj" />
+    <ProjectReference Include="..\TemplateMethod\TemplateMethod.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

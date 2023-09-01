@@ -12,6 +12,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{FF5ACD6C-05C2-4318-A754-04E00FF62B55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "Iterator\Iterator.csproj", "{9BC9FA82-20D8-46DD-A6D6-537830961497}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{6C68B76F-3311-4865-BDCC-7AA654CBAFB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +43,9 @@ Global
 		{9BC9FA82-20D8-46DD-A6D6-537830961497}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BC9FA82-20D8-46DD-A6D6-537830961497}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BC9FA82-20D8-46DD-A6D6-537830961497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C68B76F-3311-4865-BDCC-7AA654CBAFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C68B76F-3311-4865-BDCC-7AA654CBAFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C68B76F-3311-4865-BDCC-7AA654CBAFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C68B76F-3311-4865-BDCC-7AA654CBAFB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
