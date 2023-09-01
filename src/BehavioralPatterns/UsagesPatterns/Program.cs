@@ -72,12 +72,12 @@ void IteratorRealization()
 	Numerable<int> numerables = new Numerable<int>(new[] { 1, 2, 3, 4, 5});
 	IIterator<int> iterator = numerables.Create();
 
-	Numerable<Person> persons = new Numerable<Person>(new Person[] {
+	Numerable<PersonLocal> persons = new Numerable<PersonLocal>(new PersonLocal[] {
 		new() { Name = "Alex", LastName = "Pizza", Age = 5 },
 		new() { Name = "Walter", LastName = "Black", Age = 55 },
 		new() { Name = "Saul", LastName = "Goodman", Age = 12 }
 	});
-	IIterator<Person> personIterator = persons.Create();
+	IIterator<PersonLocal> personIterator = persons.Create();
 
 	while (iterator.MoveNext())
 	{
@@ -89,7 +89,7 @@ void IteratorRealization()
 
 	while (personIterator.MoveNext())
 	{
-		Person val = personIterator.Current;
+		PersonLocal val = personIterator.Current;
 		Console.WriteLine(val + "==================");
 	}
 
@@ -121,7 +121,7 @@ void PrintArray(int[] array)
 	Console.WriteLine();
 }
 
-public class Person
+public class PersonLocal
 {
 	public string? Name { get; set; }
 	public string? LastName { get; set; }
