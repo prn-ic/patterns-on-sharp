@@ -6,6 +6,7 @@
     <ProjectReference Include="..\Command\Command.csproj" />
     <ProjectReference Include="..\Iterator\Iterator.csproj" />
     <ProjectReference Include="..\TemplateMethod\TemplateMethod.csproj" />
+    <ProjectReference Include="..\State\State.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

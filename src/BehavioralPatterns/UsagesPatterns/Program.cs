@@ -3,12 +3,14 @@ using Observer;
 using Command;
 using Iterator;
 using TemplateMethod;
+using State;
 
 // StrategyExample();
 // ObserverExample();
 // CommandRealization();
 // TemplateMethodExample();
-IteratorRealization();
+// IteratorRealization();
+StateExample();
 
 void StrategyExample()
 {
@@ -110,6 +112,21 @@ void TemplateMethodExample()
 
 	Console.WriteLine("Ghost realization:");
 	ghost.LifeCycle();
+}
+
+void StateExample()
+{
+	Home home = new Home(new NoHomeState());
+	home.Build();
+	home.Build();
+	home.Broke();
+	home.Broke();
+	home.Broke();
+
+	home.Build();
+	home.Build();
+	home.Build();
+	home.Build();
 }
 
 void PrintArray(int[] array)
