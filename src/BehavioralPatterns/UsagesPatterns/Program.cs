@@ -4,13 +4,15 @@ using Command;
 using Iterator;
 using TemplateMethod;
 using State;
+using ChainOfResponsibility;
 
-// StrategyExample();
-// ObserverExample();
-// CommandRealization();
-// TemplateMethodExample();
-// IteratorRealization();
+StrategyExample();
+ObserverExample();
+CommandRealization();
+TemplateMethodExample();
+IteratorRealization();
 StateExample();
+ChainOfResponsibilityExample();
 
 void StrategyExample()
 {
@@ -127,6 +129,19 @@ void StateExample()
 	home.Build();
 	home.Build();
 	home.Build();
+}
+
+void ChainOfResponsibilityExample()
+{
+	OrderSizeService orderServiceAllOfTrue = new OrderSizeService(false, false, true);
+	OrderHandler smallOrder = new SmallOrder();
+	OrderHandler largeOrder = new LargeOrder();
+	OrderHandler extraOrder = new ExtraOrder();
+
+	smallOrder.Successor = largeOrder;
+	largeOrder.Successor = extraOrder;
+
+	smallOrder.Handle(orderServiceAllOfTrue);
 }
 
 void PrintArray(int[] array)
