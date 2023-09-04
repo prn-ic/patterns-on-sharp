@@ -8,6 +8,7 @@
     <ProjectReference Include="..\TemplateMethod\TemplateMethod.csproj" />
     <ProjectReference Include="..\State\State.csproj" />
     <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
+    <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -5,6 +5,7 @@ using Iterator;
 using TemplateMethod;
 using State;
 using ChainOfResponsibility;
+using Interpreter;
 
 StrategyExample();
 ObserverExample();
@@ -13,6 +14,7 @@ TemplateMethodExample();
 IteratorRealization();
 StateExample();
 ChainOfResponsibilityExample();
+InterpreterExample();
 
 void StrategyExample()
 {
@@ -142,6 +144,30 @@ void ChainOfResponsibilityExample()
 	largeOrder.Successor = extraOrder;
 
 	smallOrder.Handle(orderServiceAllOfTrue);
+}
+
+void InterpreterExample()
+{
+	Context context = new Context();
+	context.SetWord(1, "hello");
+	context.SetWord(2, "world");
+	context.SetWord(2, "bitches");
+
+	IExpression expression = new TerminalExpression(1);
+	IExpression expression1 = new TerminalExpression(2);
+
+	IExpression dublicateExpression = new DublicateWordToTheDocumentExpression(expression);
+	IExpression setOneExpression = new SetOneWordToTheDocumentExpression(expression);
+
+	IExpression dublicateExpression2 = new DublicateWordToTheDocumentExpression(expression1);
+	IExpression mergeExpression = new MergeDocumentsExpression(dublicateExpression, expression1); 
+
+	Console.WriteLine(dublicateExpression.Interpret(context));
+	Console.WriteLine(setOneExpression.Interpret(context));
+	Console.WriteLine(dublicateExpression.Interpret(context));
+
+	Console.WriteLine(dublicateExpression2.Interpret(context));
+	Console.WriteLine(mergeExpression.Interpret(context));
 }
 
 void PrintArray(int[] array)
