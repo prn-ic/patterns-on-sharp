@@ -9,6 +9,7 @@
     <ProjectReference Include="..\State\State.csproj" />
     <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
     <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
+    <ProjectReference Include="..\Mediator\Mediator.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

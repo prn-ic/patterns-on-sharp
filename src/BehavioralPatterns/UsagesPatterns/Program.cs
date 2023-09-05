@@ -6,6 +6,7 @@ using TemplateMethod;
 using State;
 using ChainOfResponsibility;
 using Interpreter;
+using Mediator;
 
 StrategyExample();
 ObserverExample();
@@ -15,6 +16,7 @@ IteratorRealization();
 StateExample();
 ChainOfResponsibilityExample();
 InterpreterExample();
+MediatorExample();
 
 void StrategyExample()
 {
@@ -168,6 +170,23 @@ void InterpreterExample()
 
 	Console.WriteLine(dublicateExpression2.Interpret(context));
 	Console.WriteLine(mergeExpression.Interpret(context));
+}
+
+void MediatorExample()
+{
+	BuilderCompanyMediator builderCompany = new BuilderCompanyMediator();
+
+	Colleague builder = new BuilderColleague(builderCompany);
+	Colleague architechtor = new ArchitechtorColleague(builderCompany);
+	Colleague departament = new DepartamentColleague(builderCompany);
+
+	builderCompany.Builder = builder;
+	builderCompany.Architechtor = architechtor;
+	builderCompany.Departament = departament;
+
+	departament.Send("Нужно построить многоэтажку");
+	architechtor.Send("Архитектура дома готова, сроки указаны");
+	builder.Send("Многоэтажка построена, где мои денющки?");
 }
 
 void PrintArray(int[] array)
