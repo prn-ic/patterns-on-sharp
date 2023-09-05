@@ -21,7 +21,7 @@ All patterns will be locate in folder "src", each view will be stored in differe
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/State">State</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/ChainOfResponsibility">Chain of responsibility</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Interpreter">Interpreter</a>
-   - Mediator
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Mediator">Mediator</a>
    - Memento
    - Visitor
 3. Structural Patterns (StructuralPatterns)
