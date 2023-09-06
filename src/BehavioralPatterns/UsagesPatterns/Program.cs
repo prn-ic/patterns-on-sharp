@@ -7,16 +7,23 @@ using State;
 using ChainOfResponsibility;
 using Interpreter;
 using Mediator;
+using Memento;
 
-StrategyExample();
-ObserverExample();
-CommandRealization();
-TemplateMethodExample();
-IteratorRealization();
-StateExample();
-ChainOfResponsibilityExample();
-InterpreterExample();
-MediatorExample();
+Dictionary<string, Action> actions = new Dictionary<string, Action>()
+{	
+	{ "Strategy" , StrategyExample },
+	{ "Observer" , ObserverExample },
+	{ "Command" , CommandRealization },
+	{ "Template Method" , TemplateMethodExample },
+	{ "Iterator" , IteratorRealization },
+	{ "State" , StateExample },
+	{ "Chain Of Responsibility" , ChainOfResponsibilityExample },
+	{ "Interpreter" , InterpreterExample },
+	{ "Mediator" , MediatorExample },
+	{ "Memento" , MementoExample }
+};
+
+PrintResults();
 
 void StrategyExample()
 {
@@ -189,6 +196,17 @@ void MediatorExample()
 	builder.Send("Многоэтажка построена, где мои денющки?");
 }
 
+void MementoExample()
+{
+	FileHistory fileHistory = new FileHistory();
+	Memento.File file = new Memento.File();
+	file.AddText("hello world");
+	fileHistory.History.Push(file.SaveFile());
+
+	file.AddText("goodbye world");
+	file.RestoreFile(fileHistory.History.Pop());
+}
+
 void PrintArray(int[] array)
 {
 	foreach (var item in array)
@@ -196,6 +214,15 @@ void PrintArray(int[] array)
 		Console.Write(item + " ");
 	}
 	Console.WriteLine();
+}
+
+void PrintResults()
+{
+	foreach (var action in actions)
+	{
+		Console.WriteLine($"\n====={action.Key}=====\n");
+		action.Value.Invoke();
+	}
 }
 
 public class PersonLocal
