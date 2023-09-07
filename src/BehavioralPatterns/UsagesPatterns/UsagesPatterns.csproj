@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
     <ProjectReference Include="..\Mediator\Mediator.csproj" />
     <ProjectReference Include="..\Memento\Memento.csproj" />
+    <ProjectReference Include="..\Visitor\Visitor.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

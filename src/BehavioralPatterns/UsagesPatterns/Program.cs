@@ -8,6 +8,7 @@ using ChainOfResponsibility;
 using Interpreter;
 using Mediator;
 using Memento;
+using Visitor;
 
 Dictionary<string, Action> actions = new Dictionary<string, Action>()
 {	
@@ -20,7 +21,8 @@ Dictionary<string, Action> actions = new Dictionary<string, Action>()
 	{ "Chain Of Responsibility" , ChainOfResponsibilityExample },
 	{ "Interpreter" , InterpreterExample },
 	{ "Mediator" , MediatorExample },
-	{ "Memento" , MementoExample }
+	{ "Memento" , MementoExample },
+	{ "Visitor", VisitorExample }
 };
 
 PrintResults();
@@ -55,7 +57,7 @@ void StrategyExample()
 void ObserverExample()
 {
 	EmailSender sender = new EmailSender();
-	Manager alice = new Manager(sender);
+	Observer.Manager alice = new Observer.Manager(sender);
 	alice.Name = "Алиса";
 	User ivan = new User(sender);
 	ivan.Name = "Иван";
@@ -205,6 +207,20 @@ void MementoExample()
 
 	file.AddText("goodbye world");
 	file.RestoreFile(fileHistory.History.Pop());
+}
+
+void VisitorExample()
+{
+	CompanyStructure company = new CompanyStructure();
+	company.Add(new Visitor.Manager { Name = "John", TotalWorked = 10});
+	company.Add(new Visitor.Manager { Name = "Sam", TotalWorked = 20});
+	company.Add(new Visitor.Manager { Name = "Tom", TotalWorked = 30});
+	company.Add(new Washer { Name = "Zinaida", TotalRooms = 1, Qualisize = 228});
+	company.Accept(new JsonVisitor());
+	Console.WriteLine("=======================");
+	company.Accept(new HtmlVisitor());
+	Console.WriteLine("=======================");
+	company.Accept(new TableVisitor());
 }
 
 void PrintArray(int[] array)
