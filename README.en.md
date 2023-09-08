@@ -25,7 +25,7 @@ All patterns will be locate in folder "src", each view will be stored in differe
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Memento/MementoRealization.cs">Memento</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/tree/main/src/BehavioralPatterns/Visitor/VisitorRealization.cs">Visitor</a>
 3. Structural Patterns (StructuralPatterns)
-   - Decorator
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Decorator/DecoratorRealization.cs">Decorator</a>
    - Adapter
    - Facade
    - Composer
