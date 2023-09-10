@@ -1,10 +1,12 @@
 ﻿using Decorator;
 using Adapter;
+using Facade;
 
 Dictionary<string, Action> actions = new Dictionary<string, Action>()
 {	
 	{ "Decorator" , DecoratorExample },
-    { "Adapter", AdapterExample }
+    { "Adapter", AdapterExample },
+    { "Facade", FacadeExample }
 };
 
 PrintResults();
@@ -28,6 +30,14 @@ void AdapterExample()
     tv.ShowThroughHdmi(hdmi);
     // tv.ShowThroughHdmi(vga) - будет ошибка
     tv.ShowThroughHdmi(new VgaToHdmiAdapter(vga));
+}
+
+void FacadeExample()
+{
+    PcAdapter pc = new PcAdapter();
+    User user = new User();
+    user.UseComputer(pc);
+    user.StopComputer(pc);
 }
 
 void PrintResults()

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Decorator\Decorator.csproj" />
     <ProjectReference Include="..\Adapter\Adapter.csproj" />
+    <ProjectReference Include="..\Facade\Facade.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
