@@ -27,7 +27,7 @@ All patterns will be locate in folder "src", each view will be stored in differe
 3. Structural Patterns (StructuralPatterns)
    - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Decorator/DecoratorRealization.cs">Decorator</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Adapter/AdapterRealization.cs">Adapter</a>
-   - Facade
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Facade/FacadeRealization.cs">Facade</a>
    - Composer
    - Proxy
    - Bridge
