@@ -2,13 +2,15 @@
 using Adapter;
 using Facade;
 using Composite;
+using Proxy;
 
 Dictionary<string, Action> actions = new Dictionary<string, Action>()
-{	
-	{ "Decorator" , DecoratorExample },
+{
+    { "Decorator" , DecoratorExample },
     { "Adapter", AdapterExample },
     { "Facade", FacadeExample },
-    { "Composite", CompositeExample }
+    { "Composite", CompositeExample },
+    { "Proxy", ProxyExample }
 };
 
 PrintResults();
@@ -37,7 +39,7 @@ void AdapterExample()
 void FacadeExample()
 {
     PcAdapter pc = new PcAdapter();
-    User user = new User();
+    Facade.User user = new Facade.User();
     user.UseComputer(pc);
     user.StopComputer(pc);
 }
@@ -65,11 +67,26 @@ void CompositeExample()
     menu.Act();
 }
 
+void ProxyExample()
+{
+    UserTempData tempData = new UserTempData();
+    tempData.Users.Add(new() { Name = "Tom", Password = "123" });
+    tempData.Users.Add(new() { Name = "Sam", Password = "321" });
+
+    IUserSubject userRepo = new UserRepository(tempData);
+    IUserSubject userSubject = new UserProxy(tempData);
+
+    Console.WriteLine("By proxy: {0}", userSubject.GetByName("Tom"));
+    Console.WriteLine("By repository: {0}", userRepo.GetByName("Tom"));
+    Console.WriteLine("Add Person: {0}", userSubject.Add(new() { Name = "Roy", Password = "suck"}));
+
+}
+
 void PrintResults()
 {
-	foreach (var action in actions)
-	{
-		Console.WriteLine($"\n====={action.Key}=====\n");
-		action.Value.Invoke();
-	}
+    foreach (var action in actions)
+    {
+        Console.WriteLine($"\n====={action.Key}=====\n");
+        action.Value.Invoke();
+    }
 }
