@@ -3,6 +3,7 @@ using Adapter;
 using Facade;
 using Composite;
 using Proxy;
+using Bridge;
 
 Dictionary<string, Action> actions = new Dictionary<string, Action>()
 {
@@ -10,7 +11,8 @@ Dictionary<string, Action> actions = new Dictionary<string, Action>()
     { "Adapter", AdapterExample },
     { "Facade", FacadeExample },
     { "Composite", CompositeExample },
-    { "Proxy", ProxyExample }
+    { "Proxy", ProxyExample },
+    { "Bridge", BridgeExample }
 };
 
 PrintResults();
@@ -80,6 +82,15 @@ void ProxyExample()
     Console.WriteLine("By repository: {0}", userRepo.GetByName("Tom"));
     Console.WriteLine("Add Person: {0}", userSubject.Add(new() { Name = "Roy", Password = "suck"}));
 
+}
+
+void BridgeExample()
+{
+    Car lada = new LadaCar(new CarburetorEngine());
+    lada.Name = "ваз 2107";
+    lada.StartEngine();
+    lada.SetEngine(new InjectorEngine());
+    lada.StartEngine();
 }
 
 void PrintResults()

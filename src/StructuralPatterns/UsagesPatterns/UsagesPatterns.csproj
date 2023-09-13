@@ -6,6 +6,7 @@
     <ProjectReference Include="..\Facade\Facade.csproj" />
     <ProjectReference Include="..\Composite\Composite.csproj" />
     <ProjectReference Include="..\Proxy\Proxy.csproj" />
+    <ProjectReference Include="..\Bridge\Bridge.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
