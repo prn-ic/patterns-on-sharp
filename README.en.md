@@ -30,5 +30,5 @@ All patterns will be locate in folder "src", each view will be stored in differe
    - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Facade/FacadeRealization.cs">Facade</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Composite/CompositeRealization.cs">Composer</a>
    - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Proxy/ProxyRealization.cs">Proxy</a>
-   - Bridge
+   - <a href="https://github.com/prn-ic/patterns-on-sharp/blob/main/src/StructuralPatterns/Bridge/BridgeRealization.cs">Bridge</a>
    - Flyweight
