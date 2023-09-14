@@ -7,6 +7,7 @@
     <ProjectReference Include="..\Composite\Composite.csproj" />
     <ProjectReference Include="..\Proxy\Proxy.csproj" />
     <ProjectReference Include="..\Bridge\Bridge.csproj" />
+    <ProjectReference Include="..\Flyweight\Flyweight.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

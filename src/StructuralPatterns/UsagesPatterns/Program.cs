@@ -4,6 +4,7 @@ using Facade;
 using Composite;
 using Proxy;
 using Bridge;
+using Flyweight;
 
 Dictionary<string, Action> actions = new Dictionary<string, Action>()
 {
@@ -12,7 +13,8 @@ Dictionary<string, Action> actions = new Dictionary<string, Action>()
     { "Facade", FacadeExample },
     { "Composite", CompositeExample },
     { "Proxy", ProxyExample },
-    { "Bridge", BridgeExample }
+    { "Bridge", BridgeExample },
+    { "Flyweight", FlyweightExample }
 };
 
 PrintResults();
@@ -86,11 +88,33 @@ void ProxyExample()
 
 void BridgeExample()
 {
-    Car lada = new LadaCar(new CarburetorEngine());
+    Bridge.Car lada = new LadaCar(new CarburetorEngine());
     lada.Name = "ваз 2107";
     lada.StartEngine();
     lada.SetEngine(new InjectorEngine());
     lada.StartEngine();
+}
+
+void FlyweightExample()
+{
+    CarFactory carFactory = new CarFactory();
+
+    Flyweight.Car bmw = carFactory.Get("bmw");
+    bmw.Create("M3");
+    bmw.Create("M4");
+    bmw.Create("M5");
+    bmw.Create("M6");
+    bmw.Create("M7");
+
+    Flyweight.Car unsignedCar = carFactory.Get("ayf");
+    unsignedCar.Create("value");
+
+    Flyweight.Car mercedes = carFactory.Get("MeRcEdEs");
+    mercedes.Create("C1");
+    mercedes.Create("C2");
+    mercedes.Create("C3");
+    mercedes.Create("C4 :/");
+    mercedes.Create("C5");
 }
 
 void PrintResults()
