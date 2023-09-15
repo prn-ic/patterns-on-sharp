@@ -4,11 +4,16 @@ using Singleton;
 using Prototype;
 using Builder;
 
-// FactoryMethodExample();
-// AbstractFactoryExample();
-// SingletonExample();
-// PrototypeExample();
-BuilderExample();
+Dictionary<string, Action> patterns = new Dictionary<string, Action>()
+{
+    { "FactoryMethod", FactoryMethodExample },
+    { "AbstractFactory", AbstractFactoryExample },
+    { "Singleton", SingletonExample },
+    { "Prototype", PrototypeExample },
+    { "Builder", BuilderExample }
+};
+
+PrintPatterns();
 
 void FactoryMethodExample()
 {
@@ -64,3 +69,12 @@ void PrintForCarCreated(CarFactory factory, ICar car)
 {
     Console.WriteLine($"{factory.FactoryName} release a new {car.GetType().Name} -> {car.Name}");
 }
+
+void PrintPatterns()
+{
+    foreach (var keyValuePair in patterns)
+    {
+        Console.WriteLine($"\n====={keyValuePair.Key}=====");
+        keyValuePair.Value.Invoke();
+    }
+}    
