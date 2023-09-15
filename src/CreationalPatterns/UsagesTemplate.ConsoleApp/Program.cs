@@ -10,7 +10,7 @@ Dictionary<string, Action> patterns = new Dictionary<string, Action>()
     { "AbstractFactory", AbstractFactoryExample },
     { "Singleton", SingletonExample },
     { "Prototype", PrototypeExample },
-    { "BuilderExample", BuilderExample }
+    { "Builder", BuilderExample }
 };
 
 PrintPatterns();
